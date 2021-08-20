@@ -8,8 +8,7 @@ from pyrogram.errors import ButtonDataInvalid, FloodWait
 
 from bot.database import Database # pylint: disable=import-error
 from bot.bot import Bot # pylint: disable=import-error
-from bot import MT_CHANNEL_USERNAME, MASSAGE_PHOTO
-
+from bot import MT_CHANNEL_USERNAME
 FIND = {}
 INVITE_LINK = {}
 ACTIVE_CHATS = {}
@@ -209,7 +208,7 @@ async def auto_filter(bot, update):
         try:
             await bot.send_photo(
                 chat_id = update.chat.id,
-                photo= MASSAGE_PHOTO,
+                
                 caption=f"<b>🗂️Total File :- {(len_results)} </b>\n<b>🎬Movie Name :-</b> <code>{query}</code>",
                 reply_markup=reply_markup,
                 parse_mode="html",
